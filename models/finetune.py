@@ -67,6 +67,8 @@ class Finetune(BaseLearner):
             self._network = self._network.module
 
     def _train(self, train_loader, test_loader):
+        print(self._device)
+        print(type(self._network))
         self._network.to(self._device)
         if self._cur_task == 0:
             optimizer = optim.SGD(
