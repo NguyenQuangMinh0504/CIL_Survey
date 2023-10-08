@@ -8,6 +8,9 @@ from utils.toolkit import tensor2numpy, accuracy
 from scipy.spatial.distance import cdist
 import os
 
+torch.backends.cudnn.enabled = False
+torch.cuda.is_available = lambda: False
+
 EPSILON = 1e-8
 batch_size = 64
 
