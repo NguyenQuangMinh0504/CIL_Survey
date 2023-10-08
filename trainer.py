@@ -12,6 +12,8 @@ from utils.data_manager import DataManager
 from utils.toolkit import ConfigEncoder, count_parameters, save_fc, save_model
 
 def train(args):
+    print("Training argument are:")
+    print(args)
     seed_list = copy.deepcopy(args["seed"])
     device = copy.deepcopy(args["device"])
 
