@@ -161,11 +161,10 @@ def _train(args):
 
 def _set_device(args):
     device_type = args["device"]
-    print("device type is" + device_type)
     gpus = []
 
     for device in device_type:
-        if device_type == -1:
+        if device == -1:
             device = torch.device("cpu")
         else:
             device = torch.device("cuda:{}".format(device))
