@@ -144,6 +144,7 @@ def _train(args):
 
 def _set_device(args):
     device_type = args["device"]
+    print("device type is" + device_type)
     gpus = []
 
     for device in device_type:
