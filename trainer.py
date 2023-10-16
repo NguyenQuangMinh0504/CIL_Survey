@@ -79,8 +79,6 @@ def _train(args):
     config_filepath = os.path.join(args["logfilename"], 'configs.json')
     with open(config_filepath, "w") as fd:
             json.dump(args, fd, indent=2, sort_keys=True, cls=ConfigEncoder)
-    print("args are: ")
-    print(args)
     _set_random()
     _set_device(args)
     print_args(args)
