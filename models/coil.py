@@ -69,7 +69,8 @@ class COIL(BaseLearner):
                 torch.ones(len(next_period_class_means)) / len(former_class_means) * 1.0
             )
             T = ot.sinkhorn(_mu1_vec, _mu2_vec, Q_cost_matrix, self.sinkhorn_reg)
-            T = torch.tensor(T).float().cuda()
+            # T = torch.tensor(T).float().cuda()
+            T = torch.tensor(T).float()
             transformed_hat_W = torch.mm(
                 T.T, F.normalize(self._network.fc.weight, p=2, dim=1)
             )
